@@ -1,0 +1,8 @@
+{
+  "name": "dsa-js",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/Ryan-Willpower/dsa-js.git",
+  "author": "Ryan Willpower <surasak.c.work@gmail.com>",
+  "license": "MIT"
+}
