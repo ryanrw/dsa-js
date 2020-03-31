@@ -1,10 +1,4 @@
-let unsortedArray = [4, 1, 7, 6, 3, 5];
-
-function swap(array: number[], firstIndex: number, secondIndex: number) {
-  const temp = array[firstIndex];
-  array[firstIndex] = array[secondIndex];
-  array[secondIndex] = temp;
-}
+import { swap } from "./swap";
 
 function quickSort(array: number[], low: number, high: number) {
   if (low < high) {
@@ -33,6 +27,8 @@ function partition(array: number[], low: number, high: number) {
 
   return i + 1;
 }
+
+let unsortedArray = [4, 1, 7, 6, 3, 5];
 
 quickSort(unsortedArray, 0, unsortedArray.length - 1);
 
