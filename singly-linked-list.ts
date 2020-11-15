@@ -51,6 +51,38 @@ class LinkList {
       currentNode = currentNode.next
     }
   }
+
+  addAtIndex(index: number, val: number) {
+    if (this.head === null && index === 0) {
+      const node = new LinkNode(val)
+
+      this.head = node
+
+      return
+    }
+
+    let currentIndex = 0
+    let currentNode = this.head
+    let nodeBefore: LinkNode
+
+    while (currentNode) {
+      if (currentIndex !== index) {
+        nodeBefore = currentNode
+        currentNode = currentNode.next
+        currentIndex = currentIndex + 1
+
+        continue
+      }
+
+      const node = new LinkNode(val)
+
+      node.next = currentNode
+
+      nodeBefore.next = node
+
+      break
+    }
+  }
 }
 
 const linkList = new LinkList()
