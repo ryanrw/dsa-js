@@ -15,6 +15,28 @@ class LinkList {
     this.head = null
   }
 
+  get(index: number) {
+    if (index === 0) {
+      return this.head ? this.head.val : null
+    }
+    
+    let currentIndex = 0
+    let currentNode = this.head
+
+    while (currentNode) {
+      if (currentIndex !== index) {
+        currentNode = currentNode.next
+        currentIndex = currentIndex + 1
+
+        continue
+      } 
+
+      return currentNode.val
+    }
+
+    return -1
+  }
+
   addAtHead(val: number): void {
     const node = new LinkNode(val)
 
