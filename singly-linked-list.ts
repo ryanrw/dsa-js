@@ -83,6 +83,33 @@ class LinkList {
       break
     }
   }
+
+  deleteAtIndex(index: number) {
+    if (index === 0) {
+      this.head = this.head.next
+
+      return
+    }
+
+    let currentNode = this.head
+    let currentIndex = 0
+    let nodeBefore: LinkNode
+
+    while (currentNode) {
+      if (currentIndex !== index) {
+        nodeBefore = currentNode
+        currentNode = currentNode.next
+        currentIndex = currentIndex + 1
+
+        continue
+      }
+
+      currentNode = currentNode.next ? currentNode.next : null
+      nodeBefore.next = currentNode
+
+      break
+    }
+  }
 }
 
 const linkList = new LinkList()
